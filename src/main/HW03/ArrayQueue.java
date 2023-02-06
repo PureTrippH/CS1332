@@ -1,14 +1,16 @@
+import java.util.NoSuchElementException;
+
 /**
  * Your implementation of an ArrayQueue.
  *
- * @author YOUR NAME HERE
+ * @author Tripp H
  * @version 1.0
  * @userid jhanley32
  * @GTID 903793303
  *
- * Collaborators: LIST ALL COLLABORATORS YOU WORKED WITH HERE
+ * Collaborators: None
  *
- * Resources: LIST ALL NON-COURSE RESOURCES YOU CONSULTED HERE
+ * Resources: None
  */
 public class ArrayQueue<T> {
 
@@ -48,12 +50,20 @@ public class ArrayQueue<T> {
      * @throws java.lang.IllegalArgumentException if data is null
      */
     public void enqueue(T data) {
-        T[] copy = (T[]) new Object[(backingArray.length == size) ? 2 * backingArray.length : backingArray.length];
-        for (int i = 0; i < size; i++) {;
-            copy[((front + i) % backingArray.length)] = backingArray[((front + i) % backingArray.length)];
+        int copyFront = front;
+        if (data == null) {
+            throw new IllegalArgumentException("Data Can Not Be Null!");
         }
-        copy[(front + size) % backingArray.length]  = data;
+        T[] copy = (T[]) new Object[(backingArray.length == size) ? 2 * backingArray.length : backingArray.length];
+        if (copy.length > backingArray.length) {
+            copyFront = 0;
+        }
+        for (int i = 0; i < size; i++) {
+            copy[((copyFront + i) % copy.length)] = backingArray[((front + i) % backingArray.length)];
+        }
+        copy[(copyFront + size) % copy.length]  = data;
         this.backingArray = copy;
+        front = copyFront;
         size++;
     }
 
@@ -73,9 +83,12 @@ public class ArrayQueue<T> {
      * @throws java.util.NoSuchElementException if the queue is empty
      */
     public T dequeue() {
+        if (size == 0) {
+            throw new NoSuchElementException("Can't Remove From Empty Queue.");
+        }
         T removedData = backingArray[front];
         backingArray[front] = null;
-        size--;
+        --size;
         front++;
         return removedData;
     }
@@ -89,6 +102,9 @@ public class ArrayQueue<T> {
      * @throws java.util.NoSuchElementException if the queue is empty
      */
     public T peek() {
+        if (size == 0) {
+            throw new NoSuchElementException("Can't Remove From Empty Queue.");
+        }
         return backingArray[front];
     }
 
@@ -116,14 +132,6 @@ public class ArrayQueue<T> {
     public int getFront() {
         // DO NOT MODIFY THIS METHOD!
         return front;
-    }
-
-    public String toString() {
-        String s = "ArrayStack (" + size + "): ";
-        for (int i = 0 ; i < backingArray.length; i++) {
-            s += " " + backingArray[i];
-        }
-        return s;
     }
 
     /**

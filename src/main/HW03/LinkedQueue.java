@@ -1,14 +1,16 @@
+import java.util.NoSuchElementException;
+
 /**
  * Your implementation of a LinkedQueue. It should NOT be circular.
  *
- * @author YOUR NAME HERE
+ * @author Tripp H
  * @version 1.0
- * @userid YOUR USER ID HERE (i.e. gburdell3)
- * @GTID YOUR GT ID HERE (i.e. 900000000)
+ * @userid jhanley32
+ * @GTID 903793303
  *
- * Collaborators: LIST ALL COLLABORATORS YOU WORKED WITH HERE
+ * Collaborators: None
  *
- * Resources: LIST ALL NON-COURSE RESOURCES YOU CONSULTED HERE
+ * Resources: None
  */
 public class LinkedQueue<T> {
 
@@ -32,6 +34,9 @@ public class LinkedQueue<T> {
      * @throws java.lang.IllegalArgumentException if data is null
      */
     public void enqueue(T data) {
+        if (data == null) {
+            throw new IllegalArgumentException("Data can not be null!");
+        }
         LinkedNode next = new LinkedNode(data);
         if (head == null) {
             head = next;
@@ -40,6 +45,7 @@ public class LinkedQueue<T> {
             tail.setNext(next);
             tail = tail.getNext();
         }
+        ++size;
     }
 
     /**
@@ -52,9 +58,12 @@ public class LinkedQueue<T> {
      */
     public T dequeue() {
         if (head == null) {
-            return
+            throw new NoSuchElementException("Can't remove an empty list!");
         }
-        return null;
+        T removedData = head.getData();
+        head = (head.getNext());
+        --size;
+        return removedData;
     }
 
     /**
@@ -66,6 +75,9 @@ public class LinkedQueue<T> {
      * @throws java.util.NoSuchElementException if the queue is empty
      */
     public T peek() {
+        if (head == null) {
+            throw new NoSuchElementException("The List is Empty!!");
+        }
         return head.getData();
     }
 

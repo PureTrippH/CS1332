@@ -3,14 +3,14 @@ import java.util.NoSuchElementException;
 /**
  * Your implementation of a LinkedStack. It should NOT be circular.
  *
- * @author YOUR NAME HERE
+ * @author Tripp H
  * @version 1.0
- * @userid YOUR USER ID HERE (i.e. gburdell3)
- * @GTID YOUR GT ID HERE (i.e. 900000000)
+ * @userid jhanley32
+ * @GTID 903793303
  *
- * Collaborators: LIST ALL COLLABORATORS YOU WORKED WITH HERE
+ * Collaborators: None
  *
- * Resources: LIST ALL NON-COURSE RESOURCES YOU CONSULTED HERE
+ * Resources: None
  */
 public class LinkedStack<T> {
 
