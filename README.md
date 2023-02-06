@@ -12,6 +12,8 @@ I will try to keep an updated list of EACH FUNCTION'S EFFICIENCY in each folder.
 
 
 
+### Notes That Cover Me.
+
 > NOTE! Please for the love of God Obey Georgia Tech Honor Code and All College of Computing Regulation.
 > THIS REPOSITORY IS NOT FOR YOUR BENEFIT ON HOMEWORK! ONLY VIEW THIS BEFORE EXAMS, AFTER, ETC. THERE IS A REASON I COMMIT TO THE REPO A WEEK AFTER THE LATE DEADLINE.
 
