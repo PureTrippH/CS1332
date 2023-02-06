@@ -1,3 +1,8 @@
 # 🐝 CS1332 - Data Structures and Algorithms
 ## AT GEORGIA TECH (2023)!
-A Repository of all Data Structures and Algorithms made in CS 1332 @ GATech!
+
+
+
+
+> NOTE! Please for the love of God Obey Georgia Tech Honor Code and All College of Computing Regulation.
+> THIS REPOSITORY IS NOT FOR YOUR BENEFIT ON HOMEWORK! ONLY VIEW THIS BEFORE EXAMS, AFTER, ETC. THERE IS A REASON I COMMIT TO THE REPO AFTER THE LATE DEADLINE.
